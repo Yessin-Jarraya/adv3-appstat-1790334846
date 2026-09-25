@@ -1,0 +1,11 @@
+merge_protections:
+  - name: advc203 unqualified status gate
+    if:
+      - base = main
+    success_conditions:
+      - check-success = ext-ci/build
+  - name: advc203 app-qualified status gate
+    if:
+      - base = main
+    success_conditions:
+      - check-success = @github-actions/ext-ci/build
